@@ -41,6 +41,9 @@
   "addons": [],
   "buildpacks": [
     {
+      "url": "https://github.com/batnasan/erxes-widgets-buildpack"
+    },
+    {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs"
     }
   ]
