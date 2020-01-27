@@ -19,6 +19,7 @@
   "repository": "https://github.com/erxes/erxes",
   "logo": "https://erxes.io/static/images/logo/logo-dark.png",
   "success_url": "/",
+  "image": "erxes/erxes-widgets",
   "env": {
     "PORT": {
       "description": "A port number that erxes api will be running on",
