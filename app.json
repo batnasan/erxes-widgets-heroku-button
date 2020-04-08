@@ -29,7 +29,7 @@
       "description": "Erxes Widget APP URL",
       "value": "https://erxes-widget.herokuapp.com"
     },
-    "MAIN_API_URL": {
+    "API_URL": {
       "description": "Erxes API URL",
       "value": "https://erxes-api.herokuapp.com"
     },
