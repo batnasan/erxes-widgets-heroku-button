@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+set -e
+
+build_dir=$1
+cache_dir=$2
+env_dir=$3
+bp_dir=$(dirname $(dirname $0))
+
+docs_dir="docs"
+ui_dir="ui"
+proc_file="Procfile"
+
+fetch_erxes_widgets() {
+    local widgets_release_url="https://github.com/erxes/erxes.git"
+
+    if [ -d $build_dir ]; then
+        rm -rf $build_dir
+    fi
+    mkdir -p $build_dir
+    echo "-----> Created build_dir $build_dir"
+
+    git clone --quiet $widgets_release_url $build_dir
+    cd $build_dir && git checkout --quiet develop
+
+    echo "web: cd widgets && npm start" > $proc_file
+}
+
+fetch_erxes_widgets
+echo "-----> Downloaded widgets to /app"
+
+exit 0

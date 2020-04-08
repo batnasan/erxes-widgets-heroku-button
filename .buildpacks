@@ -1,2 +1,2 @@
-https://github.com/batnasan/erxes-widgets-buildpack.git
+https://github.com/batnasan/erxes-widgets-heroku-button
 widgets=https://github.com/heroku/heroku-buildpack-nodejs.git
