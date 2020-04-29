@@ -8,12 +8,10 @@ cache_dir=$2
 env_dir=$3
 bp_dir=$(dirname $(dirname $0))
 
-docs_dir="docs"
-ui_dir="ui"
 proc_file="Procfile"
 
 fetch_erxes_widgets() {
-    local widgets_release_url="https://github.com/erxes/erxes.git"
+    local widgets_repo_url="https://github.com/erxes/erxes.git"
     
     if [ -d $build_dir ]; then
         rm -rf $build_dir
@@ -21,8 +19,10 @@ fetch_erxes_widgets() {
     mkdir -p $build_dir
     echo "-----> Created build_dir $build_dir"
     
-    git clone --quiet $widgets_release_url $build_dir
+    git clone --quiet $widgets_repo_url $build_dir
     cd $build_dir && git checkout --quiet develop
+    
+    echo "web: cd widgets && npm start" > $proc_file
 }
 
 fetch_erxes_widgets
